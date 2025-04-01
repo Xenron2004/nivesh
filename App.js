@@ -1,6 +1,7 @@
 import exress from 'express';
 import { connectDb } from './database/mongodb';
 import { authRoute } from './router/userAuth';
+import { userRoute } from './router/getUserDetail';
 
 const app=exress();
 const PORT=8080;
@@ -30,6 +31,8 @@ export const authenticateToken = (req, res, next) => {
 
 app.use(exress.json());
 route.use('/api/auth',authenticateToken,authRoute);
+route.use('/api/user',userRoute);
+
 
 // database connection
 connectDb();
