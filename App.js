@@ -25,10 +25,6 @@ export const authenticateToken = (req, res, next) => {
     });
   };
  
-
-
-
-
 app.use(exress.json());
 route.use('/api/auth',authenticateToken,authRoute);
 route.use('/api/user',userRoute);
