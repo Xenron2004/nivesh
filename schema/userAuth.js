@@ -5,6 +5,8 @@ let userAuth=new mongoose.Schema({
     "email":{typeof:String,require:true},
     "phone":{typeof:String,require:true},
     "password":{typeof:String,require:true},
+    "totalAmount" :{typeof:Number , require:false, default : 0},
+    "accountDetails":{typeof : Object , default : {}},
 
 })
 
